@@ -30,17 +30,17 @@ client.on("message", message => { // تقديم اداره
   if(message.content.startsWith("!apply")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
-        let channel = message.guild.channels.find("name", "🚫apply-to-whitelist🚫")
+        let channel = message.guild.channels.find("name", "تفعيل")
             if(!channel) return message.reply("**لانشاء روم التقديمات !!setsubmissions من فضلك اكتب الامر**")
             if(channel) {
             message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-              m.edit( message.member + ', **اسمك الحقيقى بالكامل ✍**' )
+              m.edit( message.member + ', **كم ايديك بالسيرفر✍**' )
               m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
                   m1 = m1.first();
                   var name = m1.content;
                   m1.delete();
                   m.edit(message.member + ', **:timer:**').then( (m) =>{
-                      m.edit( message.member + ', **كم عمرك؟ 🎓**' )
+                      m.edit( message.member + ', **- تعريف تقدير الحياة (LAR):**' )
                       setTimeout(() => {
                         m.delete()
                       }, 10000);
@@ -49,9 +49,7 @@ client.on("message", message => { // تقديم اداره
                           var age = m2.content;
                           m2.delete()
                           message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                            m.edit( message.member + ',```diff
-- تعريف الحياة الواقعية - Roleplay :
-```' )
+                            m.edit( message.member + ',**- تعريف الحياة الواقعية - Roleplay :**' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
@@ -60,7 +58,7 @@ client.on("message", message => { // تقديم اداره
                                 var ask = m3.content;
                                 m3.delete();
                                 message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                  m.edit( message.member + ', **هل ستحترم القوانين ؟ 📑**' )
+                                  m.edit( message.member + ', **- الفتل العشوائي - ( RDM ):**' )
                                   setTimeout(() => {
                                     m.delete()
                                   }, 10000);
@@ -69,7 +67,7 @@ client.on("message", message => { // تقديم اداره
                                       var ask2 = m4.content;
                                       m4.delete();
                                       message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                        m.edit( message.member + ', **لماذا يجب علينا ان نقبلك ؟ اعطنا سبباً وجيهاً 🤔**' )
+                                        m.edit( message.member + ', **- الصدم العشوائي - ( VDM ):**' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
                                             var ask3 = m5.content;
@@ -109,7 +107,7 @@ client.on("message", message => { // تقديم اداره
   let mention = message.mentions.members.first();
   let mySupport = message.guild.roles.find('name','• Mod');
   if(message.content.startsWith("!قبول")) {
-    let acRoom = message.guild.channels.find('name', '💥-accept-or-reject');
+    let acRoom = message.guild.channels.find('name', 'قبول ورفض');
     if(acRoom) {
     if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return;
     if(!mention) return message.reply('منشن شخص');
@@ -125,7 +123,7 @@ client.on('message',async message => {
   let mention = message.mentions.members.first();
   if(message.content.startsWith("!رفض")) {
   if(!message.channel.guild) return;
-  let acRoom = message.guild.channels.find('name', '💥-accept-or-reject');
+  let acRoom = message.guild.channels.find('name', 'قبول ورفض');
   if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return;
   if(!mention) return message.reply("منشن شخص");
  
