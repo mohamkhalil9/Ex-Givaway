@@ -76,7 +76,7 @@ client.on("message", message => { // تقديم اداره
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**تقديم ادارة** [__**${message.guild.name}**__]`)
+                        .setTitle(`[__**${message.guild.name}**__] **تقديم للتفعيل**`)
                         .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`العمر`**', `${age}` , true)
                         .addField('**`ساعات تفاعله`**',`${ask}`)
@@ -105,7 +105,7 @@ client.on("message", message => { // تقديم اداره
         });
     client.on('message',async message => {
   let mention = message.mentions.members.first();
-  let mySupport = message.guild.roles.find('name','• Mod');
+  let mySupport = message.guild.roles.find('name','مواطن ↫');
   if(message.content.startsWith("!قبول")) {
     let acRoom = message.guild.channels.find('name', 'قبول ورفض');
     if(acRoom) {
@@ -131,7 +131,7 @@ client.on('message',async message => {
   }
 });
 
-const developers = ["415142691282616330",""]
+const developers = ["415142691282616330","595712460141494308"]
 var adminprefix = ["#"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
