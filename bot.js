@@ -49,7 +49,9 @@ client.on("message", message => { // تقديم اداره
                           var age = m2.content;
                           m2.delete()
                           message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                            m.edit( message.member + ', **كم ساعه تكون متفاعل بالسيرفر؟ 🎙**' )
+                            m.edit( message.member + ',```diff
+- تعريف الحياة الواقعية - Roleplay :
+```' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
